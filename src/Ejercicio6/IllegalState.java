@@ -3,24 +3,29 @@ package Ejercicio6;
 import java.util.Scanner;
 
 public class IllegalState {
-    private static boolean closed = false;
+
+    static boolean closed;
 
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
+
         try {
-            closeApplication(); // Cerramos la aplicación
-            closeApplication(); // Intentamos cerrarla de nuevo, lo que genera la excepción
+            // Cerrar la aplicación
+            if (closed) {
+                throw new IllegalStateException("La aplicación ya está cerrada.");
+            }
+            closed = !closed;
+            System.out.println("La aplicación se ha cerrado correctamente.");
         } catch (IllegalStateException e) {
             System.out.println("Excepción: " + e.getMessage());
+            throw e;
         } finally {
             scanner.close();
         }
     }
-    public static void closeApplication() {
-        if (closed) {
-            throw new IllegalStateException("La aplicación ya está cerrada.");
-        }
-        closed = true;
-        System.out.println("La aplicación se ha cerrado correctamente.");
-    }
+    /*
+    Aquí queremos aplicar dos veces un metodo el cual está diseñado para ser usado una vez
+    generando así un error, en el ejemplo del programa,
+    el error se produce porque no podemos cerrar una aplicación que ya está cerrada
+     */
 }

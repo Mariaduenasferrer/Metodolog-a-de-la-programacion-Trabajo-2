@@ -20,6 +20,16 @@ public class MyExceptionTest {
             number(48); // trigger exception
         } catch (MyException ex) { // exception handler
             ex.printStackTrace();
+            System.out.println(ex.getMessage());
         }
     }
+    /*
+    Aquí tratamos de generar nuestro propio programa con nuestra propia excepción
+    En él podemos ver que podemos introducir varos valores, los cuales si no son el correcto, por las condiciones de los if,
+    da una ayuda para que el número pedido sea aproximado, ahora bien, si se introduce correctamente el valor pedido,
+    generará una excepción deteniendo así el programa. Además, el printStackTrace nos dice donde se ha generado la excepción
+    Print del StackTrace:
+    at Ejercicio7.MyExceptionTest.number(MyExceptionTest.java:12)
+	at Ejercicio7.MyExceptionTest.main(MyExceptionTest.java:20)
+    */
 }

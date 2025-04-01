@@ -6,4 +6,8 @@ public class ArrayIndexOutOfBounds {
         int[] Array = new int[4];
         System.out.println(Array[10]);
     }
+    /*
+    Al generar una lista debes tener en cuenta el rango de esta.
+    No podemos pedirle a una lista un el valor de una posición que está fuera de rango
+     */
 }

@@ -1,12 +1,13 @@
 package Ejercicio6;
 
-import org.junit.jupiter.api.Test;
+import org.junit.Test;
 
-import static org.junit.jupiter.api.Assertions.*;
+public class ClassCastTest {
 
-class ClassCastTest {
-
-    @Test
-    void main() {
+    @Test(expected = ClassCastException.class)
+    public void main() {
+        Object o = new Object();
+        // Intentar hacer un cast a Integer
+        Integer i = (Integer) o; // Esto debe lanzar ClassCastException
     }
 }

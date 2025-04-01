@@ -9,4 +9,8 @@ public class NoClassDefFound {
             System.out.println("SomeClass no está definida.");
         }
     }
+    /*
+    El error aquí se da por buscar una clase que en realidad no existe o está fuera del paquete
+    Como no encuentra la clase, salta la excepción, la cual es capturada con el try catch
+     */
 }

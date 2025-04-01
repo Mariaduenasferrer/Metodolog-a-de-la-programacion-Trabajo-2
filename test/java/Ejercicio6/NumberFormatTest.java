@@ -1,12 +1,12 @@
 package Ejercicio6;
 
-import org.junit.jupiter.api.Test;
+import org.junit.Test;
 
-import static org.junit.jupiter.api.Assertions.*;
+public class NumberFormatTest {
 
-class NumberFormatTest {
-
-    @Test
-    void main() {
+    @Test(expected = NumberFormatException.class)
+    public void main() {
+        // Intentar convertir una cadena no numérica
+        Integer.parseInt("abc"); // Esto debe lanzar NumberFormatException
     }
 }

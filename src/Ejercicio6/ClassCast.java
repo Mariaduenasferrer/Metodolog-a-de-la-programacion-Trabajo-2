@@ -6,4 +6,7 @@ public class ClassCast {
         Object o = new Object();
         Integer i = (Integer) o;
     }
+    /*
+    Queremos cambiarle de tipo a un objeto, pero no son compatibles
+     */
 }

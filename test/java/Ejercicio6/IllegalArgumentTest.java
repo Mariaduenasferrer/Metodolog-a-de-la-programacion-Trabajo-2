@@ -1,16 +1,17 @@
 package Ejercicio6;
 
-import org.junit.jupiter.api.Test;
+import org.junit.Test;
+import static org.junit.Assert.*;
 
-import static org.junit.jupiter.api.Assertions.*;
+public class IllegalArgumentTest {
 
-class IllegalArgumentTest {
-
-    @Test
-    void main() {
+    @Test(expected = IllegalArgumentException.class)
+    public void testDivideByZero() {
+        IllegalArgument.divide(10, 0);
     }
 
     @Test
-    void divide() {
+    public void testDivideValid() {
+        assertEquals(5, IllegalArgument.divide(10, 2));
     }
 }

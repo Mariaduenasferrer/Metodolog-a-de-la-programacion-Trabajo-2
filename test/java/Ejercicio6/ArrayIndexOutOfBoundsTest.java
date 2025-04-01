@@ -1,10 +1,14 @@
 package Ejercicio6;
 
-import static org.junit.jupiter.api.Assertions.*;
+import org.junit.Test;
 
-class ArrayIndexOutOfBoundsTest {
+public class ArrayIndexOutOfBoundsTest {
 
-    @org.junit.jupiter.api.Test
-    void main() {
+    @Test(expected = ArrayIndexOutOfBoundsException.class)
+    public void main() {
+        int[] array = new int[4];
+        // Intentar acceder a un índice fuera de los límites
+        int value = array[10]; // Esto debe lanzar ArrayIndexOutOfBoundsException
+        System.out.println(value);
     }
 }

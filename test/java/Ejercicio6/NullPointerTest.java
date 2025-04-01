@@ -1,12 +1,12 @@
 package Ejercicio6;
 
-import org.junit.jupiter.api.Test;
+import org.junit.Test;
 
-import static org.junit.jupiter.api.Assertions.*;
+public class NullPointerTest {
 
-class NullPointerTest {
-
-    @Test
-    void main() {
+    @Test(expected = NullPointerException.class)
+    public void main() {
+        String[] strs = new String[3];
+        System.out.println(strs[0].length());
     }
 }
